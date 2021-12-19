@@ -33,15 +33,14 @@ const Home: FC = () => {
    * Add a list without mutation the state directly. Before adding a list, check the id
    * of the last item because we had implemented delete functionality based on the id of the item
    * @param {string} title
-   * @returns {void}
+   * @returns {Promise<void>}
    */
-  const handleAdd = (title: string): void => {
-    const lastList = lists.slice(-1)[0];
+  const handleAdd = async (title: string): Promise<void> => {
+		const { data: { data: { id, name, closed } } } = await axios.post('http://localhost:5000/cards/create', { name: title });
     const newList: ListType = {
-      userId: 1,
-      id: lastList.id + 1,
-      name: title,
-      closed: false
+      id,
+      name,
+      closed
     };
     setLists([ ...lists, newList ]);
   };

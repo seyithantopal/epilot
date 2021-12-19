@@ -34,3 +34,18 @@ export const updateCards = async (req: Request, res: Response) => {
     return `Something went wrong during updating cards: ${err}`;
   }
 };
+
+export const createACard = async (req: Request, res: Response) => {
+  try {
+    const { name } = req.body;
+    const params = {
+      key: process.env.API_KEY,
+      token: process.env.TOKEN,
+      idList: process.env.TODO_LIST_ID,
+    };
+    const { data } = await axios.post(`https://api.trello.com/1/cards?`, { name }, { params });
+    return res.status(200).json({ message: 'OK', data });
+  } catch (err) {
+    return `Something went wrong during creating a card: ${err}`;
+  }
+};
