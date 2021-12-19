@@ -1,0 +1,26 @@
+export const COLOR_BACKGROUND = '#eee';
+export const COLOR_LIST = '#fff';
+export const COLOR_LIST_CHECKED = '#8c97bd';
+export const COLOR_LIST_TITLE = '#fff';
+export const COLOR_HR = '#8c97bd';
+export const COLOR_LISTS_GRADIENT_START = '#373b44';
+export const COLOR_LISTS_GRADIENT_END = '#4286f4';
+export const COLOR_DELETE_ICON = '#fff';
+export const COLOR_PLUS_SIGN_TEXT = '#fff';
+export const COLOR_PLUS_SIGN_BACKGROUND = '#38e0ef';
+
+export const COLOR_MODAL_BACKGROUND = '#fff';
+export const COLOR_MODAL_TITLE = 'rgb(58, 58, 58)';
+export const COLOR_MODAL_X_BUTTON = 'rgb(58, 58, 58)';
+export const COLOR_MODAL_X_BUTTON_HOVER = '#000';
+export const COLOR_MODAL_LIST_TEXTBOX_BORDER = '#b8bec4';
+export const COLOR_MODAL_SUBMIT_BUTTON_BACKGROUND = '#1e26d1';
+export const COLOR_MODAL_SUBMIT_BUTTON_TEXT = '#fff';
+export const COLOR_MODAL_CLOSE_BUTTON_BACKGROUND = '#ff2e69';
+export const COLOR_MODAL_CLOSE_BUTTON_TEXT = '#fff';
+export const COLOR_MODAL_HR = '#9a9a9a';
+export const COLOR_MODAL_OVERLAY = 'rgba(0, 0, 0, 0.5)';
+export const COLOR_MODAL_FORM_VALIDATION_ERROR = 'red';
+export const COLOR_SCROLLBAR_TRACK = '#f1f1f1';
+export const COLOR_SCROLLBAR_THUMB = COLOR_HR;
+export const COLOR_SCROLLBAR_THUMB_HOVER = '#555';

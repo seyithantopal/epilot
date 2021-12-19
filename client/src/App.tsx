@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { FC } from 'react';
+import { GlobalFontStyles } from './css/fonts';
 import './App.css';
+import Home from './pages/Home';
 
-function App() {
+const App: FC = () => {
   return (
-    <div className="App">
-      App
-    </div>
+    <>
+      <GlobalFontStyles />
+      <Home />
+    </>
   );
-}
+};
 
 export default App;
