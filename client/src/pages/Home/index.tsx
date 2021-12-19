@@ -24,7 +24,7 @@ const Home: FC = () => {
    * @param {number} id
    * @returns {Promise<void>}
    */
-  const handleDelete = async (id: number): Promise<void> => {
+  const handleDelete = async (id: string): Promise<void> => {
     const newList = lists.filter(list => list.id !== id);
     try {
       const { data: { message } } = await axios.post('http://localhost:5000/cards/delete', { id });

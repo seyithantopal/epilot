@@ -17,7 +17,6 @@ export const getCards = async (req: Request, res: Response) => {
 
 export const updateCards = async (req: Request, res: Response) => {
   try {
-    
     const { card_id } = req.params;
     const { list_id } = req.body;
     const params = {

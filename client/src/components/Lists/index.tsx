@@ -8,7 +8,7 @@ import { Wrapper, Title, Divider, ListsDiv, PlusSign } from './styles';
 
 type Props = {
   lists: ListType[];
-  onDelete: (id: number) => void;
+  onDelete: (id: string) => void;
   onAdd: (title: string) => void;
 };
 

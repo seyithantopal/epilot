@@ -1,7 +1,8 @@
 export interface ListType {
-  id: number;
+  id: string;
   name: string;
   closed: boolean;
+  idList?: string;
 };
 
 export interface CheckboxType {
