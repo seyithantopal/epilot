@@ -49,3 +49,17 @@ export const createACard = async (req: Request, res: Response) => {
     return `Something went wrong during creating a card: ${err}`;
   }
 };
+
+export const deleteACard = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.body;
+    const params = {
+      key: process.env.API_KEY,
+      token: process.env.TOKEN,
+    };
+    const { data } = await axios.delete(`https://api.trello.com/1/cards/${id}?`, { params });
+    return res.status(200).json({ message: 'OK', data });
+  } catch (err) {
+    return `Something went wrong during deleting a card: ${err}`;
+  }
+};

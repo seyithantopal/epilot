@@ -22,11 +22,18 @@ const Home: FC = () => {
   /**
    * Delete a list by id without mutating the state directly
    * @param {number} id
-   * @returns {void}
+   * @returns {Promise<void>}
    */
-  const handleDelete = (id: number): void => {
+  const handleDelete = async (id: number): Promise<void> => {
     const newList = lists.filter(list => list.id !== id);
-    setLists(newList);
+    try {
+      const { data: { message } } = await axios.post('http://localhost:5000/cards/delete', { id });
+      if (message === 'OK') {
+        setLists(newList);
+      }
+    } catch (err) {
+      console.log(`Something went wrong during deleting a card: ${err}`);
+    }
   };
 
   /**
@@ -36,13 +43,17 @@ const Home: FC = () => {
    * @returns {Promise<void>}
    */
   const handleAdd = async (title: string): Promise<void> => {
-		const { data: { data: { id, name, closed } } } = await axios.post('http://localhost:5000/cards/create', { name: title });
-    const newList: ListType = {
-      id,
-      name,
-      closed
-    };
-    setLists([ ...lists, newList ]);
+    try {
+      const { data: { data: { id, name, closed } } } = await axios.post('http://localhost:5000/cards/create', { name: title });
+      const newList: ListType = {
+        id,
+        name,
+        closed
+      };
+      setLists([ ...lists, newList ]);
+    } catch (err) {
+      console.log(`Something went wrong during creating a card: ${err}`);
+    }
   };
   return (
     <Wrapper>
